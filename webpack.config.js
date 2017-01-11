@@ -10,8 +10,14 @@ module.exports = {
     ]
   },
 
+  devServer: {
+    hot: true,
+    inline: true
+  },
+
   output: {
-    path: `${__dirname}/dist`,
-    filename: 'bundle.js'
+    path: './dist',
+    publicPath: '/assets/',
+    filename: 'app.bundle.js'
   }
 }
