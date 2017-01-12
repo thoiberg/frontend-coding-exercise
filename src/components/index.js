@@ -1,0 +1,1 @@
+export SearchResults from './search_results'

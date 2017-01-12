@@ -1,0 +1,27 @@
+{
+    "parser": "babel-eslint",
+    "extends": "standard",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react",
+        "standard",
+        "promise"
+    ],
+    "env": {
+        "mocha": true
+    },
+    "globals": {
+        "expect": false
+    },
+    "rules": {
+        "eol-last": 0,
+        "padded-blocks": 0,
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "space-before-function-paren": 0
+    }
+}
