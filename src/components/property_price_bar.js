@@ -1,9 +1,15 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class PropertyPriceBar extends Component {
-  render() {
-    return (
-      <div></div>
-    )
-  }
+const PropertyPriceBar = (props) => {
+  const {price} = props
+
+  return (
+    <div>{price}</div>
+  )
 }
+
+PropertyPriceBar.propTypes = {
+  price: React.PropTypes.string.isRequired
+}
+
+export default PropertyPriceBar

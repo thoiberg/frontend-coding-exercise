@@ -1,9 +1,15 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class PropertyImage extends Component {
-  render() {
-    return (
-      <div></div>
-    )
-  }
+const PropertyImage = (props) => {
+  const {mainImageUrl} = props
+
+  return (
+    <img src={mainImageUrl} />
+  )
 }
+
+PropertyImage.propTypes = {
+  mainImageUrl: React.PropTypes.string.isRequired
+}
+
+export default PropertyImage
