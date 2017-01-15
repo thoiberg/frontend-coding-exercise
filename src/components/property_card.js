@@ -24,5 +24,5 @@ PropertyCard.propTypes = {
     agency: React.PropTypes.object.isRequired,
     mainImage: React.PropTypes.string.isRequired
   }),
-  onClick: React.PropTypes.func.isRequired
+  onClick: React.PropTypes.func
 }

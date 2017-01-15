@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import _values from 'lodash/values'
 
 import Header from './header'
-import PropertyCard from './propery_card'
+import PropertyCard from './property_card'
 
 export default class Results extends Component {
   renderResults() {

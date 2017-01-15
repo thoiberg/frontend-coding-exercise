@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-import {Results} from 'components'
+import {Results, SavedProperties} from 'components'
 import {
   selectResults,
   selectSaved
@@ -12,11 +12,16 @@ import {addSavedResult} from 'actions'
 export class SearchResults extends Component {
 
   render() {
-    const {onClickOnResult, results} = this.props
+    const {
+      onClickOnResult,
+      results,
+      saved
+    } = this.props
 
     return (
       <div>
         <Results results={results} onClick={onClickOnResult} />
+        <SavedProperties savedProperties={saved} />
       </div>
     )
   }

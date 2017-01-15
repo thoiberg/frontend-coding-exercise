@@ -2,7 +2,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 import {random} from 'utils/test'
 
-import PropertyCard from './propery_card'
+import PropertyCard from './property_card'
 import {AgencyBranding, PropertyImage, PropertyPriceBar} from 'components'
 
 describe('<PropertyCard />', () => {
