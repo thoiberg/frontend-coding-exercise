@@ -9,6 +9,10 @@ describe('<Results />', () => {
 
   const cxt = {}
 
+  beforeEach(() => {
+    cxt.onClickOnResultSpy = sinon.spy()
+  })
+
   it('renders a Header', () => {
     const wrapper = shallow(<Results />)
 
@@ -18,13 +22,17 @@ describe('<Results />', () => {
   it('renders a PropertyCard for each result', () => {
     const results = {
       [random.integer()]: {
-        id: random.integer()
+        id: random.integer(),
+        agency: {},
+        mainImage: random.string()
       },
       [random.integer()]: {
-        id: random.integer()
+        id: random.integer(),
+        agency: {},
+        mainImage: random.string()
       }
     }
-    const wrapper = shallow(<Results results={results} />)
+    const wrapper = shallow(<Results results={results} onClickOnResult={cxt.onClickOnResultSpy} />)
 
     expect(wrapper.find(PropertyCard)).to.have.length(2)
   })
@@ -33,12 +41,13 @@ describe('<Results />', () => {
 
     beforeEach(() => {
       cxt.firstResult = {
-        id: random.integer()
+        id: random.integer(),
+        agency: {},
+        mainImage: random.string()
       }
       cxt.results = {
         [random.integer()]: cxt.firstResult
       }
-      cxt.onClickOnResultSpy = sinon.spy()
 
       cxt.wrapper = shallow(<Results results={cxt.results} onClickOnResult={cxt.onClickOnResultSpy} />)
       cxt.propertyCard = cxt.wrapper.find(PropertyCard).first()
