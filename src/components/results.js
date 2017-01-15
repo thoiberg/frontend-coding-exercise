@@ -6,14 +6,14 @@ import PropertyCard from './propery_card'
 
 export default class Results extends Component {
   renderResults() {
-    const {results, onClickOnResult} = this.props
+    const {results, onClick} = this.props
 
     return _values(results).map((result, index) => {
       return (
         <PropertyCard
           details={result}
           key={result.id}
-          onClick={onClickOnResult} />
+          onClick={onClick} />
       )
     })
 
@@ -31,5 +31,5 @@ export default class Results extends Component {
 
 Results.propTypes = {
   results: React.PropTypes.object,
-  onClickOnResult: React.PropTypes.func
+  onClick: React.PropTypes.func
 }

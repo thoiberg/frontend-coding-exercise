@@ -8,6 +8,7 @@ export default class PropertyCard extends Component {
   render() {
     const {details: {agency, mainImage, price}} = this.props
     const {brandingColors, logo} = agency
+
     return (
       <div>
         <AgencyBranding brandingColors={brandingColors} logoUrl={logo} />

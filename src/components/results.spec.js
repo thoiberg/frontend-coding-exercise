@@ -10,7 +10,7 @@ describe('<Results />', () => {
   const cxt = {}
 
   beforeEach(() => {
-    cxt.onClickOnResultSpy = sinon.spy()
+    cxt.onClickSpy = sinon.spy()
   })
 
   it('renders a Header', () => {
@@ -32,7 +32,7 @@ describe('<Results />', () => {
         mainImage: random.string()
       }
     }
-    const wrapper = shallow(<Results results={results} onClickOnResult={cxt.onClickOnResultSpy} />)
+    const wrapper = shallow(<Results results={results} onClick={cxt.onClickSpy} />)
 
     expect(wrapper.find(PropertyCard)).to.have.length(2)
   })
@@ -49,7 +49,7 @@ describe('<Results />', () => {
         [random.integer()]: cxt.firstResult
       }
 
-      cxt.wrapper = shallow(<Results results={cxt.results} onClickOnResult={cxt.onClickOnResultSpy} />)
+      cxt.wrapper = shallow(<Results results={cxt.results} onClick={cxt.onClickSpy} />)
       cxt.propertyCard = cxt.wrapper.find(PropertyCard).first()
     })
 
@@ -58,7 +58,7 @@ describe('<Results />', () => {
     })
 
     it('renders with the onClickOnResult as the onClick prop', () => {
-      expect(cxt.propertyCard.prop('onClick')).to.eq(cxt.onClickOnResultSpy)
+      expect(cxt.propertyCard.prop('onClick')).to.eq(cxt.onClickSpy)
     })
   })
 

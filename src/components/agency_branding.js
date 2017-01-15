@@ -1,10 +1,20 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class AgencyBranding extends Component {
+const AgencyBranding = (props) => {
+  const {brandingColors: {primary}, logoUrl} = props
 
-  render() {
-    return (
-      <div></div>
-    )
-  }
+  return (
+    <div style={{backgroundColor: primary}}>
+      <img src={logoUrl} />
+    </div>
+  )
 }
+
+AgencyBranding.propTypes = {
+  brandingColors: React.PropTypes.shape({
+    primary: React.PropTypes.string.isRequired
+  }),
+  logoUrl: React.PropTypes.string.isRequired
+}
+
+export default AgencyBranding
