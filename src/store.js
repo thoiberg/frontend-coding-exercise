@@ -1,11 +1,7 @@
 import {createStore} from 'redux'
 import initialData from './data.json'
+import rootReducer from 'reducers'
 import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly'
-
-function reducer(state = [], action) {
-
-  return state
-}
 
 function formatInitialState() {
   const data = {results: {}, saved: {}}
@@ -21,4 +17,4 @@ function formatInitialState() {
   return data
 }
 
-export default createStore(reducer, formatInitialState(), composeWithDevTools())
+export default createStore(rootReducer, formatInitialState(), composeWithDevTools())

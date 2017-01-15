@@ -15,7 +15,8 @@
         "mocha": true
     },
     "globals": {
-        "expect": false
+        "expect": false,
+        "sinon": false
     },
     "rules": {
         "eol-last": 0,
