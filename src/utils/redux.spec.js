@@ -1,5 +1,5 @@
 import {createReducer} from './redux'
-import randomstring from 'randomstring'
+import {random} from 'utils/test'
 
 describe('#createReducer', () => {
 
@@ -7,7 +7,7 @@ describe('#createReducer', () => {
 
   beforeEach(() => {
     cxt.initialState = {}
-    cxt.actionType = randomstring.generate()
+    cxt.actionType = random.string()
   })
 
   context('when the handler knows about the action type', () => {
@@ -35,7 +35,7 @@ describe('#createReducer', () => {
     beforeEach(() => {
       cxt.handlers = {}
       cxt.state = {
-        [randomstring.generate()]: randomstring.generate()
+        [random.string()]: random.string()
       }
       cxt.reducerFunc = createReducer(cxt.initialState, cxt.handlers)
     })

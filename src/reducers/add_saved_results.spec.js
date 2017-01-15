@@ -1,14 +1,15 @@
 import reducer from './add_saved_result'
-import randomstring from 'randomstring'
+import {random} from 'utils/test'
 
 describe('add saved results reducer', () => {
 
   const cxt = {}
 
   beforeEach(() => {
+    cxt.resultId = random.integer({max: 10})
     cxt.action = {
       payload: {
-        id: 1
+        id: cxt.resultId
       }
     }
   })
@@ -16,10 +17,10 @@ describe('add saved results reducer', () => {
   context('when a results property matching the id exists', () => {
 
     beforeEach(() => {
-      cxt.property = {[randomstring.generate()]: randomstring.generate()}
+      cxt.property = {[random.string()]: random.string()}
       cxt.state = {
         results: {
-          1: cxt.property
+          [cxt.resultId]: cxt.property
         }
       }
 
@@ -28,7 +29,7 @@ describe('add saved results reducer', () => {
 
     it('adds the property to the saved state', () => {
       expect(cxt.newState.saved).to.deep.eq({
-        1: cxt.property
+        [cxt.resultId]: cxt.property
       })
     })
 
@@ -40,7 +41,7 @@ describe('add saved results reducer', () => {
       cxt.state = {
         results: {},
         saved: {
-          2: {}
+          [random.integer({min: 10})]: {}
         }
       }
 

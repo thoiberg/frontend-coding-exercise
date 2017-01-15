@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
+import {Results} from 'components'
 import {
   selectResults,
   selectSaved
@@ -11,9 +12,11 @@ import {addSavedResult} from 'actions'
 export class SearchResults extends Component {
 
   render() {
+    const {onClickOnResult, results} = this.props
+
     return (
       <div>
-        Hello World
+        <Results results={results} onClick={onClickOnResult} />
       </div>
     )
   }
@@ -22,7 +25,7 @@ export class SearchResults extends Component {
 SearchResults.propTypes = {
   results: React.PropTypes.object,
   saved: React.PropTypes.object,
-  onClick: React.PropTypes.func
+  onClickOnResult: React.PropTypes.func
 }
 
 function mapStateToProps(state) {
@@ -34,7 +37,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClick: bindActionCreators(addSavedResult, dispatch)
+    onClickOnResult: bindActionCreators(addSavedResult, dispatch)
   }
 }
 
