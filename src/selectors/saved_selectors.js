@@ -1,3 +1,3 @@
-export function saved(state) {
+export function selectSaved(state) {
   return state.saved
 }

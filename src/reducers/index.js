@@ -1,6 +1,6 @@
 import {createReducer} from 'utils/redux'
 
-import ADD_SAVED_RESULT from '../actions'
+import ADD_SAVED_RESULT from 'actions'
 
 const defaultState = {
   results: {},

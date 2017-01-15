@@ -4,7 +4,7 @@ describe('saved selectors', () => {
 
   const cxt = {}
 
-  describe('#saved', () => {
+  describe('#selectSaved', () => {
 
     context('when there are saved properties', () => {
 
@@ -17,7 +17,7 @@ describe('saved selectors', () => {
           saved: cxt.saved
         }
 
-        cxt.savedProperties = selectors.saved(cxt.state)
+        cxt.savedProperties = selectors.selectSaved(cxt.state)
       })
 
       it('returns the saved properties', () => {
@@ -34,7 +34,7 @@ describe('saved selectors', () => {
           saved: cxt.saved
         }
 
-        cxt.savedProperties = selectors.saved(cxt.state)
+        cxt.savedProperties = selectors.selectSaved(cxt.state)
       })
 
       it('returns an empty object', () => {
