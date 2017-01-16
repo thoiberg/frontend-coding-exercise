@@ -3,7 +3,7 @@ import {shallow} from 'enzyme'
 import {random} from 'utils/test'
 
 import Results from './results'
-import {Header, PropertyCard} from 'components'
+import {Header, MouseOverButton, PropertyCard} from 'components'
 
 describe('<Results />', () => {
 
@@ -19,22 +19,33 @@ describe('<Results />', () => {
     expect(wrapper.find(Header)).to.have.length(1)
   })
 
-  it('renders a PropertyCard for each result', () => {
-    const results = {
-      [random.integer()]: {
-        id: random.integer(),
-        agency: {},
-        mainImage: random.string()
-      },
-      [random.integer()]: {
-        id: random.integer(),
-        agency: {},
-        mainImage: random.string()
-      }
-    }
-    const wrapper = shallow(<Results results={results} onClick={cxt.onClickSpy} />)
+  context('rendering the properties', () => {
 
-    expect(wrapper.find(PropertyCard)).to.have.length(2)
+    beforeEach(() => {
+      cxt.results = {
+        [random.integer()]: {
+          id: random.integer(),
+          agency: {},
+          mainImage: random.string()
+        },
+        [random.integer()]: {
+          id: random.integer(),
+          agency: {},
+          mainImage: random.string()
+        }
+      }
+
+      cxt.wrapper = shallow(<Results results={cxt.results} />)
+    })
+
+    it('renders a MouseOverButton for each result', () => {
+      expect(cxt.wrapper.find(MouseOverButton)).to.have.length(2)
+    })
+
+    it('renders a PropertyCard for each result', () => {
+      expect(cxt.wrapper.find(PropertyCard)).to.have.length(2)
+    })
+
   })
 
   context('rendering a PropertyCard', () => {
@@ -49,7 +60,7 @@ describe('<Results />', () => {
         [random.integer()]: cxt.firstResult
       }
 
-      cxt.wrapper = shallow(<Results results={cxt.results} onClick={cxt.onClickSpy} />)
+      cxt.wrapper = shallow(<Results results={cxt.results} />)
       cxt.propertyCard = cxt.wrapper.find(PropertyCard).first()
     })
 
@@ -57,9 +68,21 @@ describe('<Results />', () => {
       expect(cxt.propertyCard.prop('details')).to.eq(cxt.firstResult)
     })
 
-    it('renders with the onClickOnResult as the onClick prop', () => {
-      expect(cxt.propertyCard.prop('onClick')).to.eq(cxt.onClickSpy)
+  })
+
+  describe('#handleOnClick', () => {
+
+    beforeEach(() => {
+      cxt.resultId = random.integer()
+      cxt.wrapper = shallow(<Results onClick={cxt.onClickSpy} />)
+      cxt.handleOnClickFunc = cxt.wrapper.instance().handleOnClick(cxt.resultId)()
     })
+
+    it('returns a function that calls the onClick prop', () => {
+
+      expect(cxt.onClickSpy).to.have.been.calledWith(cxt.resultId)
+    })
+
   })
 
 })

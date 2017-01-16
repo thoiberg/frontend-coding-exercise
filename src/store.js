@@ -17,4 +17,8 @@ function formatInitialState() {
   return data
 }
 
+// const derp = rootReducer
+
+// debugger
+
 export default createStore(rootReducer, formatInitialState(), composeWithDevTools())
