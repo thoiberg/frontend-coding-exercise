@@ -81,7 +81,9 @@ module.exports = function(config) {
         'react/addons': true
       },
 
-      resolve: webpackBaseConfig.resolve
+      resolve: webpackBaseConfig.resolve,
+
+      postcss: webpackBaseConfig.postcss
     }
   })
 }

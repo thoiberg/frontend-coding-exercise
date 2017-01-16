@@ -3,6 +3,7 @@ import _values from 'lodash/values'
 
 import Header from './header'
 import PropertyCard from './property_card'
+import styles from './styles.scss'
 
 export default class SavedProperties extends Component {
 
@@ -20,7 +21,7 @@ export default class SavedProperties extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.savedProperties}>
         <Header title="Saved Properties" />
         {this.renderSavedProperties()}
       </div>

@@ -3,6 +3,7 @@ import _values from 'lodash/values'
 
 import Header from './header'
 import PropertyCard from './property_card'
+import styles from './styles.scss'
 
 export default class Results extends Component {
   renderResults() {
@@ -21,7 +22,7 @@ export default class Results extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.results}>
         <Header title={'Results'} />
         {this.renderResults()}
       </div>

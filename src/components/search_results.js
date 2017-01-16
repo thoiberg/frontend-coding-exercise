@@ -8,6 +8,7 @@ import {
   selectSaved
 } from 'selectors'
 import {addSavedResult} from 'actions'
+import styles from './styles.scss'
 
 export class SearchResults extends Component {
 
@@ -19,7 +20,7 @@ export class SearchResults extends Component {
     } = this.props
 
     return (
-      <div>
+      <div className={styles.container}>
         <Results results={results} onClick={onClickOnResult} />
         <SavedProperties savedProperties={saved} />
       </div>
