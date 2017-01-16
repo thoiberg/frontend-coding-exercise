@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './styles.scss'
+import styles from 'components/styles.scss'
 
 const MouseOverButton = (props) => {
   const {onClick} = props

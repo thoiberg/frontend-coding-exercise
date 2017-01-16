@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import _values from 'lodash/values'
 
-import Header from './header'
-import PropertyCard from './property_card'
-import styles from './styles.scss'
+import {Header, PropertyCard} from 'components'
 
 export default class SavedProperties extends Component {
 
@@ -21,7 +19,7 @@ export default class SavedProperties extends Component {
 
   render() {
     return (
-      <div className={styles.savedProperties}>
+      <div>
         <Header title="Saved Properties" />
         {this.renderSavedProperties()}
       </div>

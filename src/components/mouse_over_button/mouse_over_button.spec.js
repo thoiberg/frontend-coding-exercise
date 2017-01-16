@@ -2,7 +2,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 import {MouseOverButton} from 'components'
-import styles from './styles.scss'
+import styles from 'components/styles.scss'
 
 describe('<MouseOverButton />', () => {
 
@@ -15,7 +15,7 @@ describe('<MouseOverButton />', () => {
   it('renders the children components in the mouse over children div', () => {
     const wrapper = cxt.wrapper = shallow(
       <MouseOverButton onClick={cxt.onClickSpy}>
-        <span></span>
+        <span />
       </MouseOverButton>
     )
     const mouseOverChildrenDiv = wrapper.find(`.${styles.mouseOverChildren}`)
@@ -30,7 +30,7 @@ describe('<MouseOverButton />', () => {
       beforeEach(() => {
         cxt.wrapper = shallow(
           <MouseOverButton onClick={cxt.onClickSpy}>
-            <span></span>
+            <span />
           </MouseOverButton>
         )
 

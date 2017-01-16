@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
 import _values from 'lodash/values'
 
-import Header from './header'
-import MouseOverButton from './mouse_over_button'
-import PropertyCard from './property_card'
-import styles from './styles.scss'
+import {Header, MouseOverButton, PropertyCard} from 'components'
 
 export default class Results extends Component {
   handleOnClick = (id) => {
@@ -33,7 +30,7 @@ export default class Results extends Component {
 
   render() {
     return (
-      <div className={styles.results}>
+      <div>
         <Header title={'Results'} />
         {this.renderResults()}
       </div>
