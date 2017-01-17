@@ -2,7 +2,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 
 import {MouseOverButton} from 'components'
-import styles from 'components/styles.scss'
+import styles from './mouse_over_button.scss'
 
 describe('<MouseOverButton />', () => {
 
