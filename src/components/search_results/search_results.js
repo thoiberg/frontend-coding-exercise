@@ -44,7 +44,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onClickOnResult: bindActionCreators(addSavedResult, dispatch)
-    // onRequestServiceOffer: bindActionCreators(requestServiceOffer, dispatch)
   }
 }
 

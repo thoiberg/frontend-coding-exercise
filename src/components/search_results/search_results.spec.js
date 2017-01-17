@@ -14,16 +14,20 @@ describe('<SearchResults />', () => {
       [random.integer()]: {},
       [random.integer()]: {}
     }
+    cxt.results = {
+      [random.integer()]: {},
+      [random.integer()]: {}
+    }
   })
 
   it('renders a Results component', () => {
-    const wrapper = shallow(<SearchResults saved={cxt.saved} />)
+    const wrapper = shallow(<SearchResults results={cxt.results} saved={cxt.saved} />)
 
     expect(wrapper.find(Results)).to.have.length(1)
   })
 
   it('render a SavedProperties component', () => {
-    const wrapper = shallow(<SearchResults saved={cxt.saved} />)
+    const wrapper = shallow(<SearchResults results={cxt.results} saved={cxt.saved} />)
 
     expect(wrapper.find(SavedProperties)).to.have.length(1)
   })
@@ -46,7 +50,12 @@ describe('<SearchResults />', () => {
     })
 
     it('renders with the onClickOnResult prop', () => {
-      const wrapper = shallow(<SearchResults onClickOnResult={cxt.onClickOnResultSpy} saved={cxt.saved} />)
+      const wrapper = shallow(
+        <SearchResults
+        onClickOnResult={cxt.onClickOnResultSpy}
+        results={cxt.results}
+        saved={cxt.saved} />
+      )
       const results = wrapper.find(Results)
 
       expect(results.prop('onClick')).to.eq(cxt.onClickOnResultSpy)
@@ -57,7 +66,7 @@ describe('<SearchResults />', () => {
   context('rendering Saved properties', () => {
 
     beforeEach(() => {
-      cxt.wrapper = shallow(<SearchResults saved={cxt.saved} />)
+      cxt.wrapper = shallow(<SearchResults saved={cxt.saved} results={cxt.results} />)
       cxt.savedProperties = cxt.wrapper.find(SavedProperties)
     })
 

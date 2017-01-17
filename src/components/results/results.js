@@ -4,7 +4,13 @@ import _values from 'lodash/values'
 import {Header, MouseOverButton, PropertyCard} from 'components'
 
 export default class Results extends Component {
-  handleOnClick = (id) => {
+  constructor(props) {
+    super(props)
+
+    this.handleOnClick = this.handleOnClick.bind(this)
+  }
+
+  handleOnClick(id) {
     const {onClick} = this.props
 
     return () => {
@@ -39,6 +45,6 @@ export default class Results extends Component {
 }
 
 Results.propTypes = {
-  results: React.PropTypes.object,
+  results: React.PropTypes.object.isRequired,
   onClick: React.PropTypes.func
 }

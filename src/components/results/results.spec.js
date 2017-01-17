@@ -14,7 +14,7 @@ describe('<Results />', () => {
   })
 
   it('renders a Header', () => {
-    const wrapper = shallow(<Results />)
+    const wrapper = shallow(<Results results={{}} />)
 
     expect(wrapper.find(Header)).to.have.length(1)
   })
@@ -74,7 +74,7 @@ describe('<Results />', () => {
 
     beforeEach(() => {
       cxt.resultId = random.integer()
-      cxt.wrapper = shallow(<Results onClick={cxt.onClickSpy} />)
+      cxt.wrapper = shallow(<Results onClick={cxt.onClickSpy} results={{}} />)
       cxt.handleOnClickFunc = cxt.wrapper.instance().handleOnClick(cxt.resultId)()
     })
 
