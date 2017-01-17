@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
@@ -29,9 +29,9 @@ export class SearchResults extends Component {
 }
 
 SearchResults.propTypes = {
-  results: React.PropTypes.object,
-  saved: React.PropTypes.object,
-  onClickOnResult: React.PropTypes.func
+  results: PropTypes.object,
+  saved: PropTypes.object,
+  onClickOnResult: PropTypes.func
 }
 
 function mapStateToProps(state) {

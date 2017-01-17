@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 const PropertyImage = (props) => {
   const {mainImageUrl} = props
@@ -9,7 +9,7 @@ const PropertyImage = (props) => {
 }
 
 PropertyImage.propTypes = {
-  mainImageUrl: React.PropTypes.string.isRequired
+  mainImageUrl: PropTypes.string.isRequired
 }
 
 export default PropertyImage

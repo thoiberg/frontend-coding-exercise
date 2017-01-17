@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import _values from 'lodash/values'
 
 import {Header, MouseOverButton, PropertyCard} from 'components'
@@ -48,6 +48,6 @@ export default class Results extends Component {
 }
 
 Results.propTypes = {
-  results: React.PropTypes.object.isRequired,
-  onClick: React.PropTypes.func
+  results: PropTypes.object.isRequired,
+  onClick: PropTypes.func
 }

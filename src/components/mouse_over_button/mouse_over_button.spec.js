@@ -40,12 +40,12 @@ describe('<MouseOverButton />', () => {
           <span />
         </MouseOverButton>
       )
+
+      cxt.mouseOverButtonTextDiv = cxt.wrapper.find(`.${styles.mouseOverButtonText}`)
     })
 
     it('renders the button with default text', () => {
-      const mouseOverButtonTextDiv = cxt.wrapper.find(`.${styles.mouseOverButtonText}`)
-
-      expect(mouseOverButtonTextDiv.text()).to.eq('Click here')
+      expect(cxt.mouseOverButtonTextDiv.text()).to.eq('Click here')
     })
 
   })

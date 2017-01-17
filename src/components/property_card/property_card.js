@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 
 import {AgencyBranding, PropertyImage, PropertyPriceBar} from 'components'
 import styles from './property_card.scss'
@@ -19,9 +19,9 @@ export default class PropertyCard extends Component {
 }
 
 PropertyCard.propTypes = {
-  details: React.PropTypes.shape({
-    agency: React.PropTypes.object.isRequired,
-    mainImage: React.PropTypes.string.isRequired
+  details: PropTypes.shape({
+    agency: PropTypes.object.isRequired,
+    mainImage: PropTypes.string.isRequired
   }),
-  onClick: React.PropTypes.func
+  onClick: PropTypes.func
 }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import _values from 'lodash/values'
 
 import {Header, PropertyCard} from 'components'
@@ -28,5 +28,5 @@ export default class SavedProperties extends Component {
 }
 
 SavedProperties.propTypes = {
-  savedProperties: React.PropTypes.object.isRequired
+  savedProperties: PropTypes.object.isRequired
 }

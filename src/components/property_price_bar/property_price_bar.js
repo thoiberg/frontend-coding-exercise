@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 import styles from './property_price_bar.scss'
 
@@ -11,7 +11,7 @@ const PropertyPriceBar = (props) => {
 }
 
 PropertyPriceBar.propTypes = {
-  price: React.PropTypes.string.isRequired
+  price: PropTypes.string.isRequired
 }
 
 export default PropertyPriceBar

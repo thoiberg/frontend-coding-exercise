@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 
 import styles from './agency_branding.scss'
 
@@ -13,10 +13,10 @@ const AgencyBranding = (props) => {
 }
 
 AgencyBranding.propTypes = {
-  brandingColors: React.PropTypes.shape({
-    primary: React.PropTypes.string.isRequired
+  brandingColors: PropTypes.shape({
+    primary: PropTypes.string.isRequired
   }),
-  logoUrl: React.PropTypes.string.isRequired
+  logoUrl: PropTypes.string.isRequired
 }
 
 export default AgencyBranding
