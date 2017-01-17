@@ -10,6 +10,10 @@
   }
 }
 
+.mouseOverButtonText:hover {
+  display: inline;
+}
+
 .mouseOverButtonContainer:hover > .mouseOverButton {
   background-color: lightgray;
   opacity: 0.66;
