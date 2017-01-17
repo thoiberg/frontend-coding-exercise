@@ -1,5 +1,6 @@
 import React from 'react'
 import {shallow} from 'enzyme'
+import {random} from 'utils/test'
 
 import {MouseOverButton} from 'components'
 import styles from './mouse_over_button.scss'
@@ -10,17 +11,43 @@ describe('<MouseOverButton />', () => {
 
   beforeEach(() => {
     cxt.onClickSpy = sinon.spy()
-  })
-
-  it('renders the children components in the mouse over children div', () => {
-    const wrapper = cxt.wrapper = shallow(
-      <MouseOverButton onClick={cxt.onClickSpy}>
+    cxt.buttonText = random.string()
+    cxt.wrapper = shallow(
+      <MouseOverButton onClick={cxt.onClickSpy} buttonText={cxt.buttonText}>
         <span />
       </MouseOverButton>
     )
-    const mouseOverChildrenDiv = wrapper.find(`.${styles.mouseOverChildren}`)
+
+  })
+
+  it('renders the children components in the mouse over children div', () => {
+    const mouseOverChildrenDiv = cxt.wrapper.find(`.${styles.mouseOverChildren}`)
 
     expect(mouseOverChildrenDiv.find('span')).to.have.length(1)
+  })
+
+  it('renders the button Text in the mouseOverButtonText div', () => {
+    const mouseOverButtonTextDiv = cxt.wrapper.find(`.${styles.mouseOverButtonText}`)
+
+    expect(mouseOverButtonTextDiv.text()).to.eq(cxt.buttonText)
+  })
+
+  context('when buttonText prop is not supplied', () => {
+
+    beforeEach(() => {
+      cxt.wrapper = shallow(
+        <MouseOverButton onClick={cxt.onClickSpy}>
+          <span />
+        </MouseOverButton>
+      )
+    })
+
+    it('renders the button with default text', () => {
+      const mouseOverButtonTextDiv = cxt.wrapper.find(`.${styles.mouseOverButtonText}`)
+
+      expect(mouseOverButtonTextDiv.text()).to.eq('Click here')
+    })
+
   })
 
   context('when clicked', () => {

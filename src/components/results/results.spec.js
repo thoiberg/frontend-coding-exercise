@@ -70,6 +70,28 @@ describe('<Results />', () => {
 
   })
 
+  context('rendering a MouseOverButton', () => {
+
+    beforeEach(() => {
+      cxt.firstResult = {
+        id: random.integer(),
+        agency: {},
+        mainImage: random.string()
+      }
+      cxt.results = {
+        [random.integer()]: cxt.firstResult
+      }
+
+      cxt.wrapper = shallow(<Results results={cxt.results} />)
+      cxt.mouseOverButton = cxt.wrapper.find(MouseOverButton).first()
+    })
+
+    it('adds the Click to add property text', () => {
+      expect(cxt.mouseOverButton.prop('buttonText')).to.eq('Click to add property')
+    })
+
+  })
+
   describe('#handleOnClick', () => {
 
     beforeEach(() => {

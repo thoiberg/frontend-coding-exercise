@@ -24,7 +24,10 @@ export default class Results extends Component {
     return _values(results).map((result, index) => {
       const resultId = result.id
       return (
-        <MouseOverButton key={resultId} onClick={this.handleOnClick(resultId)} >
+        <MouseOverButton
+          key={resultId}
+          onClick={this.handleOnClick(resultId)}
+          buttonText={'Click to add property'} >
           <PropertyCard
             details={result}
             key={resultId} />
