@@ -1,4 +1,5 @@
 import {createReducer} from 'utils/redux'
+import {combineReducers} from 'redux'
 
 import {ADD_SAVED_RESULT} from 'actions'
 
@@ -7,6 +8,10 @@ const defaultState = {
   saved: {}
 }
 
-export default createReducer(defaultState, {
+const propertiesReducer = createReducer(defaultState, {
   [ADD_SAVED_RESULT]: require('./add_saved_result').default
+})
+
+export default combineReducers({
+  properties: propertiesReducer
 })

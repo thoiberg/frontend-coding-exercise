@@ -14,7 +14,9 @@ describe('saved selectors', () => {
           2: {}
         }
         cxt.state = {
-          saved: cxt.saved
+          properties: {
+            saved: cxt.saved
+          }
         }
 
         cxt.savedProperties = selectors.selectSaved(cxt.state)
@@ -31,7 +33,9 @@ describe('saved selectors', () => {
       beforeEach(() => {
         cxt.saved = {}
         cxt.state = {
-          saved: cxt.saved
+          properties: {
+            saved: cxt.saved
+          }
         }
 
         cxt.savedProperties = selectors.selectSaved(cxt.state)

@@ -14,7 +14,9 @@ describe('result selectors', () => {
           2: {}
         }
         cxt.state = {
-          results: cxt.results
+          properties: {
+            results: cxt.results
+          }
         }
       })
 
@@ -28,7 +30,11 @@ describe('result selectors', () => {
 
       beforeEach(() => {
         cxt.results = {}
-        cxt.state = {results: cxt.results}
+        cxt.state = {
+          properties: {
+            results: cxt.results
+          }
+        }
       })
 
       it('returns an empty state', () => {

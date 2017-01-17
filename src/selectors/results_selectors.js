@@ -1,5 +1,7 @@
 export function selectResults(state) {
-  return state.results
+  const {properties} = state
+
+  return properties.results
 }
 
 export function selectResultById(state, id) {
