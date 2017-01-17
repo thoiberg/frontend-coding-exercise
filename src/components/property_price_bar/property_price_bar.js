@@ -1,10 +1,12 @@
 import React from 'react'
 
+import styles from './property_price_bar.scss'
+
 const PropertyPriceBar = (props) => {
   const {price} = props
 
   return (
-    <div>{price}</div>
+    <div className={styles.propertyPriceBar}>{price}</div>
   )
 }
 

@@ -1,0 +1,6 @@
+@import 'styles/_mixins.scss';
+
+.propertyPriceBar {
+  @include font-styling;
+  text-align: center;
+}

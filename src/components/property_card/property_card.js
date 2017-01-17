@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import {AgencyBranding, PropertyImage, PropertyPriceBar} from 'components'
-import styles from 'components/styles.scss'
+import styles from './property_card.scss'
 
 export default class PropertyCard extends Component {
   render() {

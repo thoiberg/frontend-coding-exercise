@@ -8,7 +8,7 @@ import {
   selectSaved
 } from 'selectors'
 import {addSavedResult} from 'actions'
-import styles from 'components/styles.scss'
+import styles from './search_results.scss'
 
 export class SearchResults extends Component {
 
